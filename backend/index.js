@@ -26,5 +26,15 @@ app.use((err,req,res,next)=>{
    return res.json({message: err.message})
 })
 
-app.listen(3002)
-console.log('server on port 3002');
+/*app.listen(3002)
+console.log('server on port 3002');*/
+
+//const server = require('./src/app.js');
+const { conn } = require('./src/db.js');
+
+
+conn.sync({ force: false }).then(() => {
+  app.listen(process.env.PORT, () => {
+    console.log('%s listening at 3002'); 
+  });
+});
