@@ -33,7 +33,7 @@ export default function TaskList(){
 //fuxduysxgjfhd
     return(
        <>
-         <h1>TaskList</h1>
+         <h1 style={{marginTop:"70px"}}>TaskList</h1>
          {
             tasks.map(el=>(
                <Card key= {el.id} style={{
